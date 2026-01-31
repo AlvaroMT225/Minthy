@@ -1,0 +1,379 @@
+/* ====================================================================
+   src/components/templates/LocationModal/LocationModal.module.css
+   ==================================================================== */
+
+.locationModal {
+  --backdrop-opacity: 0.6;
+  --background: #ffffff;
+  --border-radius: 24px;
+  --box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  --width: 95%;
+  --max-width: 1200px;
+  --height: 90%;
+  --max-height: 800px;
+  --animation-duration: 0.4s;
+}
+
+.locationModal::part(backdrop) {
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(8px);
+}
+
+.locationModal::part(content) {
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(30, 58, 138, 0.2);
+}
+
+/* 🎨 HEADER ELEGANTE */
+.header {
+  background: linear-gradient(135deg, #1A355B 0%, #1e3a8a 100%);
+  --background: transparent;
+  position: relative;
+  overflow: hidden;
+}
+
+.header::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -20%;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+  border-radius: 50%;
+}
+
+.toolbar {
+  --background: transparent;
+  --color: #ffffff;
+  --border-color: transparent;
+  padding: 8px 0;
+  position: relative;
+  z-index: 1;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: 'Playfair Display', serif;
+  font-size: 20px;
+  font-weight: 600;
+  color: #ffffff;
+  letter-spacing: -0.2px;
+}
+
+.titleIcon {
+  font-size: 24px;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.closeButton {
+  --color: rgba(255, 255, 255, 0.9);
+  --background-hover: rgba(255, 255, 255, 0.1);
+  --border-radius: 12px;
+  --padding-start: 12px;
+  --padding-end: 12px;
+}
+
+.closeButton:hover {
+  --color: #ffffff;
+}
+
+/* 📱 CONTENIDO PRINCIPAL */
+.content {
+  --background: linear-gradient(135deg, #ffffff 0%, #f8fafc 50%, #e6f2ff 100%);
+  --padding-top: 24px;
+  --padding-bottom: 0;
+  --padding-start: 0;
+  --padding-end: 0;
+  overflow-y: auto;
+}
+
+.container {
+  padding: 0 24px 24px 24px;
+  max-width: 100%;
+  height: 100%;
+}
+
+.grid {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* 📝 SECCIÓN DEL FORMULARIO */
+.formSection {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  border-radius: 20px;
+  padding: 32px;
+  box-shadow: 0 8px 30px rgba(30, 58, 138, 0.08);
+  border: 1px solid rgba(30, 58, 138, 0.1);
+  height: 100%;
+  margin-bottom: 24px;
+  animation: slideInLeft 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* 🗺️ SECCIÓN DEL MAPA */
+.mapSection {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  border-radius: 20px;
+  padding: 24px;
+  box-shadow: 0 8px 30px rgba(30, 58, 138, 0.08);
+  border: 1px solid rgba(30, 58, 138, 0.1);
+  height: 100%;
+  margin-bottom: 24px;
+  animation: slideInRight 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* 🔘 FOOTER CON BOTONES */
+.footer {
+  background: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(20px);
+  border-top: 1px solid rgba(30, 58, 138, 0.1);
+  padding: 20px 32px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 16px;
+  position: sticky;
+  bottom: 0;
+  z-index: 10;
+}
+
+.cancelButton {
+  --color: #64748b;
+  --background-hover: rgba(100, 116, 139, 0.1);
+  --border-radius: 12px;
+  font-weight: 500;
+  min-width: 120px;
+  height: 48px;
+}
+
+.saveButton {
+  --background: linear-gradient(135deg, #1e3a8a, #1A355B);
+  --background-hover: linear-gradient(135deg, #1d4ed8, #1e40af);
+  --color: #ffffff;
+  --border-radius: 12px;
+  --box-shadow: 0 4px 16px rgba(30, 58, 138, 0.3);
+  font-weight: 600;
+  min-width: 160px;
+  height: 48px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.saveButton:hover {
+  --box-shadow: 0 8px 25px rgba(30, 58, 138, 0.4);
+  transform: translateY(-2px);
+}
+
+.saveButton:disabled {
+  --background: #94a3b8;
+  --box-shadow: none;
+  transform: none;
+}
+
+/* ✨ ANIMACIONES */
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* 📱 RESPONSIVE DESIGN */
+@media (max-width: 1024px) {
+  .locationModal {
+    --width: 98%;
+    --height: 95%;
+    --max-height: 900px;
+  }
+  
+  .container {
+    padding: 0 16px 16px 16px;
+  }
+  
+  .formSection,
+  .mapSection {
+    padding: 24px;
+  }
+  
+  .footer {
+    padding: 16px 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .locationModal {
+    --width: 100%;
+    --height: 100vh;
+    --max-height: none;
+    --border-radius: 0;
+  }
+  
+  .locationModal::part(content) {
+    border-radius: 0;
+    height: 100vh;
+    max-height: none;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .content {
+    --padding-top: 12px;
+    --padding-bottom: 120px; /* Espacio para footer fijo */
+    --padding-start: 0;
+    --padding-end: 0;
+    flex: 1;
+    overflow-y: auto;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  .container {
+    padding: 0 12px 120px 12px; /* Bottom padding para footer */
+    min-height: calc(100vh - 160px); /* Altura mínima */
+  }
+  
+  .grid {
+    min-height: auto;
+    height: auto;
+  }
+  
+  .formSection,
+  .mapSection {
+    padding: 16px;
+    border-radius: 16px;
+    margin-bottom: 16px;
+    height: auto;
+    min-height: 250px;
+  }
+  
+  /* Vista previa en móvil */
+  .previewSection {
+    padding: 16px;
+    border-radius: 16px;
+    margin-bottom: 16px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    box-shadow: 0 8px 30px rgba(30, 58, 138, 0.08);
+    border: 1px solid rgba(30, 58, 138, 0.1);
+  }
+  
+  /* Espaciador para footer */
+  .footerSpacer {
+    height: 120px;
+    flex-shrink: 0;
+  }
+  
+  .footer {
+    position: fixed !important;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 16px 20px;
+    gap: 12px;
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(20px);
+    border-top: 1px solid rgba(30, 58, 138, 0.1);
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.1);
+    z-index: 1000 !important;
+    height: auto;
+    min-height: 80px;
+    display: flex !important;
+    justify-content: flex-end !important;
+  }
+  
+  .cancelButton,
+  .saveButton {
+    flex: 1;
+    min-width: unset;
+    height: 44px;
+  }
+  
+  .title {
+    font-size: 18px;
+  }
+  
+  .titleIcon {
+    font-size: 20px;
+  }
+}
+
+/* 📱 MÓVILES MUY PEQUEÑOS */
+@media (max-width: 480px) {
+  .container {
+    padding: 0 8px 24px 8px;
+  }
+  
+  .formSection,
+  .mapSection,
+  .previewSection {
+    padding: 12px;
+    border-radius: 12px;
+    margin-bottom: 12px;
+    min-height: 280px;
+  }
+  
+  .footer {
+    padding: 12px 16px;
+    min-height: 76px;
+  }
+  
+  .title {
+    font-size: 16px;
+  }
+  
+  .content {
+    height: calc(100vh - 116px); /* Ajustar para footer más pequeño */
+  }
+  
+  /* Más espacio para el footer en pantallas muy pequeñas */
+  .content::after {
+    height: 88px;
+  }
+}
+
+/* 🔄 MEJORAS PARA EL SCROLL */
+@media (max-width: 768px) {
+  .content {
+    /* Smooth scrolling */
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+  }
+  
+  /* Indicador de scroll en webkit */
+  .content::-webkit-scrollbar {
+    width: 3px;
+  }
+  
+  .content::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  
+  .content::-webkit-scrollbar-thumb {
+    background: rgba(30, 58, 138, 0.3);
+    border-radius: 3px;
+  }
+  
+  .content::-webkit-scrollbar-thumb:hover {
+    background: rgba(30, 58, 138, 0.5);
+  }
+}

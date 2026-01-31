@@ -1,0 +1,238 @@
+/**
+ * Archivo: globals.css
+ * Proyecto: Prueba1 (Ionic + React)
+ * Descripción: Estilos globales del proyecto restaurados.
+ */
+
+/* ==========================================================================
+   Directivas Tailwind CSS
+   ========================================================================== */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ==========================================================================
+   Base general
+   ========================================================================== */
+html,
+body {
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  background-color: var(--ion-background-color);
+  color: var(--ion-text-color);
+  margin: 0;
+  padding: 0;
+}
+
+/* ==========================================================================
+   Formularios de autenticación
+   ========================================================================== */
+ion-content {
+  --background: var(--ion-background-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+ion-header {
+  --background: var(--ion-color-primary);
+  color: white;
+  text-align: center;
+}
+
+ion-toolbar {
+  --background: var(--ion-color-primary);
+  color: white;
+}
+
+ion-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+/* Centrado del formulario */
+ion-item {
+  width: 90%;
+  max-width: 400px;
+  margin: 12px auto;
+  --padding-start: 10px;
+  --inner-padding-end: 10px;
+  --highlight-height: 0;
+}
+
+/* Alineación de etiquetas */
+ion-label {
+  font-size: 0.9rem;
+  color: var(--ion-color-dark);
+  margin-left: 4px;
+  margin-bottom: 4px;
+  display: block;
+}
+
+/* Campos de entrada */
+ion-input {
+  border: 1px solid #dcdcdc;
+  border-radius: 8px;
+  padding: 8px 12px;
+  font-size: 1rem;
+  --padding-start: 12px;
+}
+
+/* Botón principal */
+ion-button {
+  width: 90%;
+  max-width: 400px;
+  margin: 20px auto;
+  font-weight: 600;
+  --background: var(--ion-color-primary);
+  --border-radius: 8px;
+  --box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* ==========================================================================
+   Texto de registro / enlaces
+   ========================================================================== */
+p {
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--ion-color-dark);
+}
+
+a {
+  color: var(--ion-color-primary);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* ==========================================================================
+   Modo oscuro
+   ========================================================================== */
+body.dark {
+  background-color: #121212;
+  color: #f1f1f1;
+}
+
+body.dark ion-item {
+  --background: #1e1e1e;
+}
+
+body.dark ion-input {
+  border-color: #333;
+  background-color: #1a1a1a;
+  color: #fff;
+}
+
+/* ==========================================================================
+   Ajustes visuales específicos de IonInput (Login / Register)
+   ========================================================================== */
+ion-item {
+  --min-height: 70px;
+}
+
+.custom-input {
+  margin-top: 6px;
+  font-size: 1rem;
+  padding: 10px 12px !important;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #fff;
+}
+
+ion-label {
+  font-weight: 500;
+  font-size: 0.95rem;
+  color: #333;
+  margin-bottom: 4px;
+  display: block;
+}
+
+/* ==========================================================================
+   Variables OKLCH para Dashboard Médico
+   ========================================================================== */
+:root {
+  /* Colores base del sistema */
+  --background: oklch(0.99 0.005 220);
+  --foreground: oklch(0.15 0.02 240);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.15 0.02 240);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.15 0.02 240);
+  --primary: oklch(0.45 0.18 250);
+  --primary-foreground: oklch(0.99 0.005 220);
+  --secondary: oklch(0.96 0.01 220);
+  --secondary-foreground: oklch(0.15 0.02 240);
+  --muted: oklch(0.95 0.01 220);
+  --muted-foreground: oklch(0.5 0.02 240);
+  --accent: oklch(0.52 0.2 320);
+  --accent-foreground: oklch(0.99 0.005 220);
+  --destructive: oklch(0.6 0.22 25);
+  --destructive-foreground: oklch(0.99 0.005 220);
+  --border: oklch(0.9 0.01 220);
+  --input: oklch(0.9 0.01 220);
+  --ring: oklch(0.45 0.18 250);
+
+  /* Paleta de colores específica por sensor médico */
+  --bp-blue: oklch(0.55 0.15 240);
+  --bp-blue-soft: oklch(0.95 0.03 240);
+  --spo2-green: oklch(0.6 0.15 150);
+  --spo2-green-soft: oklch(0.95 0.03 150);
+  --temp-violet: oklch(0.6 0.15 290);
+  --temp-violet-soft: oklch(0.95 0.03 290);
+  --weight-amber: oklch(0.65 0.15 70);
+  --weight-amber-soft: oklch(0.95 0.03 70);
+
+  /* Variables de gráficas */
+  --chart-1: var(--bp-blue);
+  --chart-2: var(--spo2-green);
+  --chart-3: var(--temp-violet);
+  --chart-4: var(--weight-amber);
+  --chart-5: oklch(0.55 0.15 200);
+
+  --radius: 0.5rem;
+}
+
+/* Tema oscuro */
+.dark {
+  --background: oklch(0.12 0.02 240);
+  --foreground: oklch(0.96 0.01 220);
+  --card: oklch(0.15 0.02 240);
+  --card-foreground: oklch(0.96 0.01 220);
+  --popover: oklch(0.15 0.02 240);
+  --popover-foreground: oklch(0.96 0.01 220);
+  --primary: oklch(0.55 0.2 250);
+  --primary-foreground: oklch(0.99 0.005 220);
+  --secondary: oklch(0.25 0.02 240);
+  --secondary-foreground: oklch(0.96 0.01 220);
+  --muted: oklch(0.2 0.02 240);
+  --muted-foreground: oklch(0.6 0.02 240);
+  --accent: oklch(0.58 0.22 320);
+  --accent-foreground: oklch(0.99 0.005 220);
+  --destructive: oklch(0.55 0.2 25);
+  --destructive-foreground: oklch(0.99 0.005 220);
+  --border: oklch(0.25 0.02 240);
+  --input: oklch(0.25 0.02 240);
+  --ring: oklch(0.55 0.2 250);
+
+  /* Paleta oscura para sensores médicos */
+  --bp-blue: oklch(0.65 0.15 240);
+  --bp-blue-soft: oklch(0.2 0.03 240);
+  --spo2-green: oklch(0.65 0.15 150);
+  --spo2-green-soft: oklch(0.2 0.03 150);
+  --temp-violet: oklch(0.65 0.15 290);
+  --temp-violet-soft: oklch(0.2 0.03 290);
+  --weight-amber: oklch(0.7 0.15 70);
+  --weight-amber-soft: oklch(0.2 0.03 70);
+
+  /* Variables de gráficas en modo oscuro */
+  --chart-1: var(--bp-blue);
+  --chart-2: var(--spo2-green);
+  --chart-3: var(--temp-violet);
+  --chart-4: var(--weight-amber);
+  --chart-5: oklch(0.65 0.15 200);
+}
+

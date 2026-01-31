@@ -1,0 +1,79 @@
+/* Estilos específicos para el dashboard médico con mayor especificidad */
+
+/* Fuente 7 segmentos para reloj digital */
+@font-face {
+  font-family: "SevenSeg";
+  src: url("/assets/fonts/dseg7-classic-latin-700-normal.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Forzar estilos de Card para que no sean sobrescritos por Ionic */
+[data-slot="card"] {
+  border-radius: 0.75rem !important;
+  border-width: 1px !important;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1) !important;
+  background: var(--card) !important;
+  color: var(--card-foreground) !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 1.5rem !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+}
+
+/* Hover effect para tarjetas */
+[data-slot="card"]:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1) !important;
+}
+
+/* CardContent padding override */
+[data-slot="card-content"] {
+  padding-left: 1rem !important;
+  padding-right: 1rem !important;
+}
+
+/* Badge estilos */
+[data-slot="badge"] {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  border-radius: 0.375rem !important;
+  border-width: 1px !important;
+  padding-left: 0.5rem !important;
+  padding-right: 0.5rem !important;
+  padding-top: 0.125rem !important;
+  padding-bottom: 0.125rem !important;
+  font-size: 0.75rem !important;
+  line-height: 1rem !important;
+  font-weight: 500 !important;
+  width: fit-content !important;
+  white-space: nowrap !important;
+  flex-shrink: 0 !important;
+}
+
+/* Select dropdown - ensure proper display */
+[data-slot="select-content"] {
+  z-index: 9999 !important;
+  background: var(--popover) !important;
+  border: 1px solid var(--border) !important;
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1) !important;
+}
+
+[data-slot="select-trigger"] {
+  background: var(--background) !important;
+  border: 1px solid var(--border) !important;
+}
+
+/* Animación de spinner para el botón de exportar */
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

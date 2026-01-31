@@ -1,0 +1,106 @@
+/**
+ * Archivo original: variables.css
+ * Proyecto: Prueba1 (Ionic + React)
+ * Descripción: Define las variables globales del tema Ionic
+ * Sin dependencias de Tailwind o PostCSS
+ */
+
+/* ==========================================================================
+   Paleta de colores principal
+   ========================================================================== */
+:root {
+  /* Colores base (tema claro) */
+  --ion-color-primary: #0070f3;
+  --ion-color-primary-rgb: 0, 112, 243;
+  --ion-color-primary-contrast: #ffffff;
+  --ion-color-primary-contrast-rgb: 255, 255, 255;
+  --ion-color-primary-shade: #005ec1;
+  --ion-color-primary-tint: #3388f5;
+
+  --ion-color-secondary: #50c8ff;
+  --ion-color-secondary-rgb: 80, 200, 255;
+  --ion-color-secondary-contrast: #ffffff;
+  --ion-color-secondary-contrast-rgb: 255, 255, 255;
+  --ion-color-secondary-shade: #46b0e0;
+  --ion-color-secondary-tint: #62ceff;
+
+  --ion-color-tertiary: #6a64ff;
+  --ion-color-tertiary-rgb: 106, 100, 255;
+  --ion-color-tertiary-contrast: #ffffff;
+  --ion-color-tertiary-contrast-rgb: 255, 255, 255;
+  --ion-color-tertiary-shade: #5d58e0;
+  --ion-color-tertiary-tint: #7b74ff;
+
+  --ion-color-success: #2dd36f;
+  --ion-color-success-rgb: 45, 211, 111;
+  --ion-color-success-contrast: #ffffff;
+  --ion-color-success-contrast-rgb: 255, 255, 255;
+  --ion-color-success-shade: #28ba62;
+  --ion-color-success-tint: #42d77d;
+
+  --ion-color-warning: #ffc409;
+  --ion-color-warning-rgb: 255, 196, 9;
+  --ion-color-warning-contrast: #000000;
+  --ion-color-warning-contrast-rgb: 0, 0, 0;
+  --ion-color-warning-shade: #e0ac08;
+  --ion-color-warning-tint: #ffca22;
+
+  --ion-color-danger: #eb445a;
+  --ion-color-danger-rgb: 235, 68, 90;
+  --ion-color-danger-contrast: #ffffff;
+  --ion-color-danger-contrast-rgb: 255, 255, 255;
+  --ion-color-danger-shade: #cf3c4f;
+  --ion-color-danger-tint: #ed576b;
+
+  --ion-color-medium: #92949c;
+  --ion-color-medium-rgb: 146, 148, 156;
+  --ion-color-medium-contrast: #ffffff;
+  --ion-color-medium-contrast-rgb: 255, 255, 255;
+  --ion-color-medium-shade: #808289;
+  --ion-color-medium-tint: #9d9fa6;
+
+  --ion-color-light: #f4f5f8;
+  --ion-color-light-rgb: 244, 245, 248;
+  --ion-color-light-contrast: #000000;
+  --ion-color-light-contrast-rgb: 0, 0, 0;
+  --ion-color-light-shade: #d7d8da;
+  --ion-color-light-tint: #f5f6f9;
+
+  --ion-color-dark: #222428;
+  --ion-color-dark-rgb: 34, 36, 40;
+  --ion-color-dark-contrast: #ffffff;
+  --ion-color-dark-contrast-rgb: 255, 255, 255;
+  --ion-color-dark-shade: #1e2023;
+  --ion-color-dark-tint: #383a3e;
+
+  /* Fondo y texto */
+  --ion-background-color: #ffffff;
+  --ion-text-color: #000000;
+
+  /* Paleta extendida (para dashboard médico) */
+  --bp-blue: #3b82f6;
+  --bp-blue-soft: #e0f2fe;
+  --spo2-green: #22c55e;
+  --spo2-green-soft: #dcfce7;
+  --temp-violet: #8b5cf6;
+  --temp-violet-soft: #ede9fe;
+  --glucose-red: #ef4444;
+  --glucose-red-soft: #fee2e2;
+  --weight-amber: #f59e0b;
+  --weight-amber-soft: #fef3c7;
+}
+
+/* ==========================================================================
+   Tema oscuro
+   ========================================================================== */
+body.dark {
+  --ion-color-primary: #4b8cff;
+  --ion-color-primary-contrast: #ffffff;
+  --ion-color-secondary: #3dc2ff;
+  --ion-color-tertiary: #5260ff;
+  --ion-color-success: #2fdf75;
+  --ion-color-warning: #ffd534;
+  --ion-color-danger: #ff4961;
+  --ion-background-color: #121212;
+  --ion-text-color: #f1f1f1;
+}

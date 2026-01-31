@@ -1,0 +1,4 @@
+/* Fondo teal para el dashboard */
+.dashboard-content {
+  --background: linear-gradient(135deg, #E0F7F4 0%, #B8EDE7 100%);
+}

@@ -1,0 +1,18 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(dir /s \"c:\\Users\\USUARIO\\Documents\\Minthy\\Prueba1\\Prueba1\")",
+      "Bash(dir \"C:\\Users\\USUARIO\\Documents\\Semestre 7\\Itinerario\\code4\" /s /b)",
+      "Bash(find:*)",
+      "Bash(dir:*)",
+      "Bash(npm run build:*)",
+      "Bash(findstr:*)",
+      "Bash(npm run dev:*)",
+      "Bash(npm install:*)",
+      "Bash(cat:*)",
+      "Bash(del \"C:\\\\Users\\\\USUARIO\\\\Documents\\\\Minthy\\\\Copia de seguridad\\\\Prueba1_CopiaF\\\\Prueba1_CopiaF\\\\src\\\\utils\\\\sensorSimulator.ts\")"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
